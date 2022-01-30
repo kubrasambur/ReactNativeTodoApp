@@ -9,12 +9,14 @@ const App = () => {
   const [todo, setTodo] = useState([]);
   const [counter, setCounter] = useState(0)
 
+  
   useEffect(() => {
     const newTodoList = todo.filter(item => item.pressed === false);
     const length = newTodoList.length;
     setCounter(length);
   }, [todo]);
 
+  
   const deleteHandler = item => {
     setTodo(todo.filter(todoItem => todoItem !== item));
   };
